@@ -1,0 +1,189 @@
+@import "masterstyles";
+
+//importing media query responsive min
+$height: 0.00em;
+$iPhone-6-8-Port: 23.000em;  //23.438em 375px
+$iPhone-6-8-PlusPort: 25.875em;  //414px
+$iPhone-4-Land: 28.000em;  //30em 480px
+$iPhone-5-Land: 35.500em;  //568px
+$Nexus7-Port: 37.500   em; //600px
+$GalaxyNmore-Land: 40.000em;  //640px
+$iPad_iPadMini-Port: 48.000em; //768px
+$iPhoneXland_or_KindlePort: 50.000em; //800px or 812px iPhoneX
+$iPad_iPadMini-Land-Desktop: 64.000em; //1024px
+$laptopTouch_1280: 80.000em; //1280px
+$Wide-Desktop: 90em; //1440px
+// stop import here
+
+$black: #111;
+$radius: 4px;
+$transition: all .25s ease-in-out;
+$transition2: all .60s ease-in-out;
+
+
+html,
+body {
+    min-height: 100%;
+    height: 100%;
+}
+
+html {
+ font-size: 16px;
+}
+
+body {
+    position: relative;
+    font-size: 100%;
+}
+
+//my code here for the image gallery placement into my html
+#borneid_gallery_wrapper {
+    position:relative;
+}
+
+.gallery-container {
+    position: relative;
+    top: 0;
+    left: 0;
+    //end of my code --------------------------
+}
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+.gallery-card {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1.875rem;
+}
+
+.gallery-thumbnail {
+    max-width: 100%;
+    height: auto;
+    border-radius: $radius;
+}
+
+.card-icon-open {
+    display: flex;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+    transition: $transition;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+
+    .box1 {
+        width: 50px;
+        height: 50px;
+        opacity: 0;
+        transition: $transition2;
+        background-image: url("../images/open_arrow.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
+
+.gallery-thumbnail:focus ~ .card-icon-open,
+.gallery-thumbnail:hover ~ .card-icon-open,
+.gallery-thumbnail ~ .card-icon-open:focus,
+.gallery-thumbnail ~ .card-icon-open:hover {
+    opacity: 1;
+
+    .box1 {
+        opacity: 1;
+    }
+}
+
+.modal-overlay {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    height: 100vmax;
+    background: rgba(21,21,21,.75);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-body {
+    position: absolute;
+    border: 3px solid #fff;
+    width: 100%;
+    top: 50%;
+    left: 0%;
+    z-index: 11;
+    padding: 0;
+    overflow: hidden;
+    border-radius: $radius;
+    transform: translate(0%, -50%);
+    margin: 0 auto;
+
+    @include responsivemin($iPhone-4-Land, $height){
+        width: 50%;
+        top: 50%;
+        left: 25%;
+    }
+    @include responsivemin($iPad_iPadMini-Port, $height){
+        width: 75%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        overflow:hidden;
+    }
+    @include responsivemin($iPad_iPadMini-Land-Desktop, $height){
+        width: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        overflow: auto;
+    }
+
+    img {
+        width: 100%;
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 0;
+    right: 8px;
+    font-size: 1.5rem;
+    color: $black;
+    transition: $transition;
+    padding: 0px 10px;
+    background:  rgba(255, 255, 255, 0.8);
+    margin-top: 8px;
+
+    &:focus,
+    &:hover {
+        color: #fff;
+        background: rgba(0, 0, 0, 0.5);
+    }
+}
+
+.section-header {
+	padding: 0px 20px 20px;
+
+	@include responsivemin($iPad_iPadMini-Port, $height){
+		padding: 0px 20px 30px;
+	}
+	@include responsivemin($iPad_iPadMini-Land-Desktop, $height){
+		padding: 0px 20px 40px;
+	}
+	h2 {
+		text-align: center;
+		padding-bottom:10px;
+		font-weight: 600;
+    	font-size: 20px;
+
+		@include responsivemin($iPad_iPadMini-Port, $height){
+    		font-size: 24px;
+    		padding-bottom:15px;
+    	}
+	}
+	
+}

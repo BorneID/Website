@@ -1,0 +1,921 @@
+
+
+//importing media query responsive min
+@import "masterstyles";
+@import "gallerysass";
+
+// colors
+$black: 000;
+$blackText: #222;
+$white: #fff;
+$red: #af272f;
+$blue: #282832;
+$yellow: #ffff00; 
+
+$height: 0.00em;
+$GalaxySIII: 22.50em; //360px
+$iPhone-6-8-Port: 23.000em;  //23.438em 375px
+$iPhone-6-8-PlusPort: 25.750em;  //414px really 412 = 25.750en
+$iPhone-4-Land: 28.000em;  //30em 480px
+$iPhone-5-Land: 35.500em;  //568px
+$Nexus7-Port: 37.500em; //600px
+$GalaxyNmore-Land: 40.000em;  //640px
+$iPhone-6-8-Land: 41.6875em;  //667px wide
+
+$iPad_iPadMini-Port: 48.000em; //768px
+$iPhoneXland_or_KindlePort: 50.000em; //800px or 812px iPhoneX
+$Nexus7_land_960w: 60.00em; //960px wide
+$iPad_iPadMini-Land-Desktop: 64.000em; //1024px
+$laptopTouch_1280: 80.000em; //1280px
+$Wide-Desktop: 90em; //1440px
+$ExtraLarge-Desktop: 100em; //1600px
+
+@media screen and (min-width: 1400px) {
+	.container {
+	  width: 1370px;
+	}
+  }
+  @media screen and (min-width: 1600px) {
+	.container {
+	  width: 1570px;
+	}
+  }
+  @media screen and (min-width: 1900px) {
+	.container {
+	  width: 1870px;
+	}
+  }
+
+body, ul, h1, h2, h3, h4, h5, p, div, img, li {
+	margin: 0;
+    padding: 0;
+    font-size: 16px;
+	box-sizing: border-box; 
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+a {
+	margin: 0;
+    padding: 0;
+    font-size: 0px;
+}
+p, h1, h2, h3, h4, h5 {
+	color: $blackText;
+}
+
+.main_wrapper { 
+	display: table;
+	background-color: $white;
+	font-family: 'Open Sans', sans-serif;
+	width:100%; 
+	margin: 0 auto;
+	color:$blackText;
+	overflow-y: scroll;
+}
+
+.header-top-nav { 
+	display: table;
+	width: 100%;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	background: white;
+	background: rgba(255, 255, 255, 0.95);
+	border-bottom: 2px solid  rgba(0, 0, 0, 0.1);
+	z-index: 99;
+
+    	@include responsivemin($iPad_iPadMini-Land-Desktop, $height){
+			display: flex;
+    	}
+}
+
+//HEADER LOGO BOX
+.header-top-nav a.logo-box {
+	display: none;
+	background:url("..//images/borneID-website-logo-COLORED-redDot.png");
+	background-repeat:no-repeat;
+	background-position: center;
+	width: 30%;
+	height:40px;
+	background-size: contain;
+	margin:10px auto 0px;
+
+	@include responsivemin($iPad_iPadMini-Port, $height){
+		width:40%;
+		display:inline-block;
+		vertical-align:top;
+		height:60px;
+		background-size: 30%;
+		background-position: 20px;
+		margin: 0px auto;
+	}
+	@include responsivemin($iPad_iPadMini-Land-Desktop, $height){
+		background-size: 20%;
+		background-position: 20px;
+	}
+	@include responsivemin($laptopTouch_1280, $height){
+		background-size: 15%;
+	}
+}
+
+.nav-sec {
+	text-align:center;
+	display:inline-block;
+	padding: 0px 10px;
+	display:block;
+	
+	@include responsivemin($iPad_iPadMini-Port, $height){
+		width:60%;
+		display:inline-block;
+		vertical-align:top;
+		height: 60px;
+	}
+
+	a li {
+		color: $blackText;
+
+		&:hover {
+			color: #0084f2;
+		}
+		&:active, &:focus {
+			color: #004f91;
+		}
+	}
+}
+
+.nav-sec ul {
+	display:flex;
+	justify-content: space-around;
+
+	@include responsivemin($iPad_iPadMini-Port, $height){
+		padding-top: 12px;
+		text-align: right;
+	}
+}
+
+.nav-sec li {
+	display: inline-block;
+    vertical-align: top;
+    font-size: 13px;
+    padding: 10px 0px;
+    cursor:pointer;
+
+	@include responsivemin($GalaxySIII, $height){
+		font-size: 15px;
+    	margin: 0px 5px;
+	}
+	@include responsivemin($iPhone-6-8-PlusPort, $height){
+		font-size: 16px;
+    	margin: 0px 7px;
+	}
+	@include responsivemin($iPad_iPadMini-Port, $height){
+		font-size: 18px;
+	}
+	@include responsivemin($laptopTouch_1280, $height){
+		font-size: 20px;
+	}
+}
+
+.top-image-section {
+	position:relative;
+	height: 300px;
+	// background-image: url("..//images/graphicDesign.jpg"); old image---
+	background-image: url("..//images/borneID-website-header-NO-LOGO-flat-2400w.jpg");
+	background-repeat:no-repeat;
+	background-size: cover;
+	background-position-x: center;
+    background-position-y: top;
+
+	@include responsivemin($iPad_iPadMini-Port, $height){
+		height:530px;
+		background-size: cover;
+	    background-position-x: center;
+	    background-position-y: top;
+    }
+	@include responsivemin($iPad_iPadMini-Land-Desktop, $height){
+		height:775px;
+	}
+	@include responsivemin($Wide-Desktop, $height){
+		height:875px;
+	}
+	.gradientoverlay {
+		position: relative;
+		z-index: 0;
+		width: 100%;
+		height: 100%;
+		background:rgba(0, 0, 0, 0.65);
+	}
+	.slogan-a {
+		top: 0px;
+		position: absolute;
+		z-index: 2;
+		text-align: center;
+		width: 100%;
+		padding: 20px 10px 0px;
+
+			@include responsivemin($iPad_iPadMini-Land-Desktop, $height){
+				padding-top: 20px;
+			}
+
+    	img {
+			width: 85%;
+			margin: 10px auto 0;
+
+			@include responsivemin($GalaxySIII, $height){
+				width: 70%;
+			}
+			@include responsivemin($iPhone-4-Land, $height){
+				width: 65%;
+			}
+			@include responsivemin($iPhone-6-8-Port, $height){
+				
+			}
+			@include responsivemin($GalaxyNmore-Land, $height){
+				width:55%;
+			}
+			@include responsivemin($Nexus7-Port, $height){
+				width: 57%;
+			}
+			@include responsivemin($iPad_iPadMini-Port, $height){
+				width: 55%;
+			}
+			
+			@include responsivemin($iPad_iPadMini-Land-Desktop, $height){
+				width: 45%;
+			}
+			@include responsivemin($laptopTouch_1280, $height){
+				width: 38%;
+			}
+			@include responsivemin($Wide-Desktop, $height){
+				width: 40%;
+			}
+			@include responsivemin($ExtraLarge-Desktop, $height){
+				width: 30%;
+			}
+    	}
+    	.first-slogan {
+			margin-top: 60px;
+		}
+    	h2 {
+    		text-align: center;
+		    color: #fff;
+			line-height: 1;
+			font-size: 18px;
+			padding-top: 40px;
+			font-weight: 100;
+			font-family: 'Myriad Pro', Arial, Helvetica, sans-serif;
+
+			@include responsivemin($GalaxySIII, $height){
+				font-size: 18px;
+			}
+			@include responsivemin($iPhone-4-Land, $height){
+				font-size: 22px;
+			}
+			@include responsivemin($iPhone-6-8-Port, $height){
+				
+			}
+			@include responsivemin($GalaxyNmore-Land, $height){
+				font-size: 24px;
+			}
+			@include responsivemin($Nexus7-Port, $height){
+				font-size: 23px;
+				padding-top: 30px;
+			}
+			@include responsivemin($iPad_iPadMini-Port, $height){
+				font-size:35px;
+				line-height: 1.2;
+				padding-top: 105px;
+		    }
+			@include responsivemin($iPad_iPadMini-Land-Desktop, $height){
+				padding-top: 175px;
+			}
+			@include responsivemin($laptopTouch_1280, $height){
+
+			}
+			@include responsivemin($Wide-Desktop, $height){
+				padding-top: 165px;
+				font-size:40px;
+			}
+			@include responsivemin($ExtraLarge-Desktop, $height){
+				padding-top: 155px;
+				// font-size:35px;
+			}
+		}
+	}
+}
+
+.divider-w-icons {
+	width:100%;
+	margin: 0 auto;
+	display:flex;
+	justify-content: space-evenly;
+	padding: 20px 0px 0px;
+
+	@include responsivemin($iPad_iPadMini-Port, $height){
+		padding: 60px 0px 0px;
+		width:80%;
+	}
+
+	.each-icon {
+		display:table;
+		vertical-align: bottom;
+		width:33.3%;
+		text-align: center;
+
+		.test {
+			display:table;
+			width: 100%;
+			margin: 0 auto;
+			padding-top: 5px;
+			
+
+			@include responsivemin($iPad_iPadMini-Port, $height){
+				width: 60%;
+			}
+		}
+		.test {
+			.art-icon,p,i {
+				color: #2f47a5;
+			}
+		}
+		.test:hover {
+			.art-icon,p {
+				cursor:pointer;
+				color: #0084f2;
+				// color: #FD4F4B;
+			}
+		}
+		
+		.test:hover {
+			.art-icon,i {
+				cursor:pointer;
+			color: #0084f2;
+			// color: #FD4F4B;
+			}
+		}
+	
+		.test:hover {
+			.ux-icon {
+				cursor:pointer;
+				background-image: url("..//images/mouseHover.png");
+			}
+		}
+
+		a {
+			text-decoration: none;
+		}
+	
+		.art-icon {
+			height:35px;
+			margin:0 auto;
+			color: $blackText !important;
+
+			@include responsivemin($iPad_iPadMini-Port, $height){
+				height: 40px;
+			 }
+		}
+		.ux-icon {
+			background-image: url("..//images/mouse_blue_2f47a5.png");
+			background-repeat:no-repeat;
+			width: 32px;
+			background-size: 99%;
+			background-position-y: 4px;
+		}
+		i {
+			font-size: 25px;
+			margin-top: 5px;
+
+			@include responsivemin($iPad_iPadMini-Port, $height){
+				font-size: 30px;
+			}
+		}
+		p {
+			font-size: 12px;
+			padding: 0px;
+			font-weight: 400;
+			width: 100%;
+
+			@include responsivemin($GalaxySIII, $height){
+				font-size: 13px;
+			}
+			@include responsivemin($iPad_iPadMini-Port, $height){
+				font-size: 16px;
+			}
+		}
+	}
+}
+
+.spacer {
+	margin:0 auto;
+	width:75px;
+	height: 0.1em;
+	background:#000;
+
+	@include responsivemin($iPad_iPadMini-Port, $height){
+		width:90px
+	}
+}
+.portfolio .spacer {
+	width: 130px;
+	
+	@include responsivemin($iPad_iPadMini-Port, $height){
+		width:168px;
+	}
+}
+
+section{
+	padding: 30px 0px;
+
+	@include responsivemin($iPad_iPadMini-Port, $height){
+		padding: 60px 0px;
+	}
+
+	@include responsivemin($iPad_iPadMini-Land-Desktop, $height){
+		padding: 100px 0px;
+	}
+}
+
+.section-header {
+	padding: 0px 20px 20px;
+
+	@include responsivemin($iPad_iPadMini-Port, $height){
+		padding: 0px 20px 30px;
+	}
+	@include responsivemin($iPad_iPadMini-Land-Desktop, $height){
+		padding: 0px 20px 40px;
+	}
+	h2 {
+		text-align: center;
+		padding-bottom:10px;
+		font-weight: 600;
+    	font-size: 20px;
+
+		@include responsivemin($iPad_iPadMini-Port, $height){
+    		font-size: 24px;
+    		padding-bottom:15px;
+    	}
+	}
+	
+}
+
+
+.home-page {
+	padding: 0px;
+}
+.intro {
+	vertical-align: top;
+	background: #cbe7ff;
+
+	p {
+		width: 80%;
+	    line-height: 1.3em;
+	    margin: 0 auto;
+
+		@include responsivemin($iPad_iPadMini-Port, $height){
+	    	line-height: 1.4em;
+	    	font-size: 20px;
+	    }
+	}
+
+	.spacer {
+		background: $blackText;
+	}
+}
+.bio-image-section {
+
+	.photo {
+		margin:0 auto;
+		width:200px;
+		height:200px;
+		border-radius:50%;
+		background-image: url("..//images/Kathy_Borne_borne_i_d.jpg");
+		background-repeat:no-repeat;
+		background-size: 100%;
+		margin-bottom:20px;
+
+		@include responsivemin($iPad_iPadMini-Port, $height){
+			width:220px;
+			height:220px;
+			margin-bottom:30px;
+		}
+	}
+	h1, p {
+		text-align: center;
+	}
+	h1, h2 {
+		font-size:20px;
+		font-weight: 600;
+
+		@include responsivemin($iPad_iPadMini-Port, $height){
+			font-size:28px;
+		}
+	}
+	p {
+		display:block;
+		vertical-align: top;
+		line-height: 1.5;
+
+		@include responsivemin($iPad_iPadMini-Port, $height){
+			font-size:20px;
+		}
+	}
+}
+
+.graphic-d {
+	width: 100%;
+	display:block;
+
+	@include responsivemin($iPad_iPadMini-Port, $height){
+		display:flex;
+	}
+	
+	.image {
+		background-image: url("..//images/ResponsiveArt-QuieterFutureWebsite.jpg");
+		background-repeat:no-repeat;
+		background-size: contain;
+		background-position: top;
+		width: 100%;
+		display:block;
+		height: 240px;
+		display:block;
+
+		@include responsivemin($iPad_iPadMini-Port, $height){
+			width: 50%;
+			display:inline-block;
+			vertical-align: top;
+			height: 240px;
+    		background-size: 100%;
+    		background-position: center top;
+		}
+		@include responsivemin($iPad_iPadMini-Land-Desktop, $height){
+			height: 385px;
+    		background-position: center;
+		}
+		@include responsivemin($Nexus7_land_960w, $height){
+			background-size: 84%;
+		}
+		@include responsivemin($Wide-Desktop, $height){
+			width: 50%;
+			height: 570px;
+			background-size: 100%;
+			background-position: left center;
+	   }
+	   @include responsivemin($ExtraLarge-Desktop, $height){
+			background-size: 84%;
+			background-position: center;
+		}
+		
+	}
+	.descript {
+		padding-top: 24px;
+		display:block;
+		height: auto;
+		display:block;
+		text-align: center;
+		margin: 0 auto;
+
+		@include responsivemin($iPad_iPadMini-Port, $height){
+			padding: 0px;
+			width: 50%;
+			display:inline-block;
+			vertical-align: top;
+			height: auto;
+		}
+		@include responsivemin($iPad_iPadMini-Land-Desktop, $height){
+			padding: 40px 0px 0px;
+		}
+		@include responsivemin($Wide-Desktop, $height){
+			width: 50%;
+			padding-top: 90px;
+		} 
+	}
+	h1 {
+		font-size: 20px;
+		padding-bottom: 5px;
+		font-weight: 600;
+		text-align: center;
+		// width: 100%;
+		margin: 0 auto;
+
+		@include responsivemin($GalaxySIII, $height){
+			// width: 100%;
+		}
+		@include responsivemin($iPhone-4-Land, $height){
+			// width: 70%;
+		}
+		@include responsivemin($GalaxyNmore-Land, $height){
+			// width: 55%;
+		}
+		@include responsivemin($iPad_iPadMini-Port, $height){
+			font-size: 24px;
+			font-weight: 600;
+			// width: 90%;
+		}
+		@include responsivemin($iPad_iPadMini-Land-Desktop, $height){
+			font-size: 32px;
+		}
+		@include responsivemin($Wide-Desktop, $height){
+			font-size: 36px;
+	    } 
+	}
+	ul {
+		margin: 0 auto;
+		list-style-type: none;
+		padding-top: 5px;
+		width: fit-content;
+		width: -moz-fit-content;
+		width: -webkit-fit-content;
+	}
+
+	ul li::before {
+		content: "\2022";
+		color: #FD4F4A;
+		font-weight: bold;
+		display: inline-block; 
+		width: 0.75em;
+	  }
+
+	  li {
+		text-align:left;
+		font-size: 15px;
+
+		@include responsivemin($GalaxySIII, $height){
+			font-size: 18px;
+		}
+		@include responsivemin($iPhone-4-Land, $height){
+			font-size: 15px;
+		}
+		@include responsivemin($GalaxyNmore-Land, $height){
+			font-size: 18px;
+		}
+		@include responsivemin($iPad_iPadMini-Land-Desktop, $height){
+			line-height: 1.7;
+			font-size: 22px;
+		}
+		@include responsivemin($Wide-Desktop, $height){
+			font-size: 28px;
+	    } 
+	}
+}
+
+section.graphic-d {
+	padding: 50px 0px;
+}	
+.services {
+	display:table;
+	background-color: #cbe7ff;
+	width:100%;
+}
+.each-service {
+	width: 80%;
+    margin: 0 auto;
+    padding:0px 0px 30px;
+
+    i {
+    	display:inline-block;
+    	vertical-align: top;
+    	margin-right: 5px;
+    }
+    h4 {
+    	display:inline-block;
+    	vertical-align: top;
+    	font-weight: 600;
+		font-size:18px;
+
+		@include responsivemin($iPad_iPadMini-Port, $height){
+    		font-size:22px;
+    	}
+    }
+    p {
+		color: #333 !important;
+
+		@include responsivemin($iPad_iPadMini-Port, $height){
+	    	line-height: 1.4em;
+	    	font-size: 20px;
+	    }
+	}
+}
+.each-service.front-end {
+    padding:0px 0px 0px;
+}
+ 
+.portfolio {
+	overflow: hidden;
+	background:#222;
+	display: table;
+	width: 100%;
+	padding: 0px;
+	
+	.portfolio-top {
+		width:100%;
+		height:150px;
+		background:#fff;
+	}
+	ul {
+		text-align: center;
+		li {
+			display:inline-block;
+			vertical-align: top;
+			margin:0px 20px;
+			text-align: center;
+		}
+	}
+
+	.fadeout {
+		display:block;
+		position: relative;
+	    background:pink;
+	    width: 90%;
+	    height: 465px;
+	    top: -465px;
+	    margin: 0 auto;
+	    z-index:2;
+	    left:-375px;
+	}
+	#Fader p {
+		float: right;
+    	padding: 10px;
+	}
+	h2 {
+		color: #fff !important;
+	}
+	.spacer {
+		background: #fff !important;
+	}
+	.fadein {
+	    display:block;
+		position: relative;
+	    width: 90%;
+	    height: 465px;
+	    top: -465px;
+	    margin: 0 auto;
+	    z-index:2;
+	    left:0px;
+	}
+}
+.webportfolio, .printportfolio {
+	padding: 30px 0px;
+
+	@include responsivemin($iPad_iPadMini-Port, $height){
+		padding: 60px 0px;
+	}
+
+	@include responsivemin($iPad_iPadMini-Land-Desktop, $height){
+		padding: 100px 0px;
+	}
+}
+.webportfolio{
+	background:#222;
+
+	.row {
+		padding: 0px 20px;
+	}
+}
+.printportfolio {
+	background:#333;
+
+	.row {
+		padding: 0px 20px;
+	}
+}
+.contact {
+	border-top: 1px solid gray;
+	display:table;
+	width:100%;
+}
+
+.contact-content {
+	background:#fff;
+	width:100%;
+	display:flex;
+
+	.each-icon {
+		display:inline-block;
+		vertical-align: top;
+		text-align: center;	
+
+		div {
+			i {
+				font-size: 25px;
+				padding-top: 5px;
+				color: #2f47a5;
+
+				
+				@include responsivemin($iPad_iPadMini-Port, $height){
+					font-size: 40px;
+				}
+			}
+		}
+		p {
+			font-size: 14px;
+			padding: 5px 0px;
+			color: #2f47a5;
+
+
+			@include responsivemin($iPad_iPadMini-Port, $height){
+				font-size: 20px;
+			}
+		}
+	}
+	.each-icon {
+		// width: 25%;  //if we add GitHub back in under Contact section
+		width: 33.3%;
+	}
+	.center-icon:hover {
+		p, i, a {
+			cursor:pointer !important;
+			color: #0084f2;
+		}
+	}
+	.center-icon:active {
+		p, i, a {
+			cursor:pointer !important;
+			color: #004f91;
+		}
+	}
+
+	.icon-anchor {
+	    margin: 0 auto;
+	    text-decoration: none;
+		color: $blackText;
+	}
+	
+	.center-icon {
+		margin: 0 auto;
+		width: 100%;
+
+    	@include responsivemin($iPad_iPadMini-Land-Desktop, $height){
+			width: 50%;
+		}
+	}
+}
+
+footer {
+	background-color: #2f47a5;
+	text-align: center;
+	padding: 30px 0px 50px;
+	color: #FFF;
+
+	@include responsivemin($iPad_iPadMini-Land-Desktop, $height){
+		font-size: 18px;
+		padding: 60px 0px;
+	}
+
+	img {
+		width: 65%;
+		margin: 0 auto;
+
+		@include responsivemin($iPhone-4-Land, $height){
+			width: 40%;
+		}
+
+		@include responsivemin($iPad_iPadMini-Port, $height){
+			width: 35%;
+		}
+		@include responsivemin($iPad_iPadMini-Land-Desktop, $height){
+			width: 28%;
+		}
+		@include responsivemin($Wide-Desktop, $height){
+			width: 20%;
+	    } 
+    }
+
+	i {
+		padding:10px 0px;
+		font-size: 12px !important;
+
+		@include responsivemin($iPad_iPadMini-Port, $height){
+			font-size: 18px !important;
+		}
+	}
+
+	p {
+		color: #fff;
+		font-size: 12px !important;
+		
+		@include responsivemin($iPad_iPadMini-Port, $height){
+			font-size: 18px !important;
+		}
+	}
+	.copyright {
+		padding: 0;
+		margin-top: -20px;
+	
+		@include responsivemin($iPad_iPadMini-Land-Desktop, $height){
+			margin-top: -40px;
+		}
+	}
+	a p {
+		&:hover {
+			color: #0084f2;
+		}
+
+	}
+}
