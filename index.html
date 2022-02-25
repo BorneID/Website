@@ -79,7 +79,7 @@
             <!-- </div> -->
         </section>
 
-        <section class="bio-image-section" id="about-link">
+       <!--<section class="bio-image-section" id="about-link">
             <div class="section-header">
                 <h2>About</h2>
                 <div class="spacer"></div>
@@ -89,20 +89,21 @@
             <p class="titles">Graphic Designer</p>
             <p class="titles">UI/UX Designer</p>
             <p class="titles">UI/UX Developer</p>
-        </section>
+        </section> -->
 
         <section class="intro about">
-            <p>I’m originally from northern Kentucky / Cincinnati, Ohio area and moved to St. Petersburg, Florida in
-                1995. I’ve worked as a
-                Graphic Designer and Pre-Press Technician since 1988 and crossed over into web design and development in
+            <div class="section-header">
+                <h2>About me</h2>
+                <div class="spacer"></div>
+            </div>
+                <p>I’ve worked as a Graphic Designer and Pre-Press Technician in the printing industry for over 25 years. I crossed over into web design and development in
                 2014. I'm currently a UI/UX Designer and Developer. </p>
             <br />
-            <p>I now design responsive, mobile-first websites and software using wireframes and mockups mostly done in
-                Adobe software, following through with
+            <p>I now design responsive, mobile-first websites and software using wireframes and mockups using
+                Adobe Photoshop, Illustrator, XD, and other software. All of my development experience is hand-coding for 
                 front end development in HTML5, SASS, CSS, jQuery, Javascript, React.js and more. Working as a
-                UI/UX professional, I have the opportunity to collaborate with teams and clients to design the best user
-                friendly experience
-                with appealing graphics to keep the user engaged and informed.</p>
+                UI/UX professional, I have the opportunity to collaborate with various teams and clients to design the best user
+                friendly experience with appealing graphics to keep the user engaged and informed.</p>
 
             <div class="divider-w-icons">
                 <div class="each-icon">
@@ -166,17 +167,15 @@
                     <h4>Graphic Design</h4>
                     <p>It all starts here. Your logo and branding need to communicate your values and your quality
                         reputation. I ensure your logo and branding stay consistent throughout multiple forms of print
-                        media and your digital online presence. Over 20 years of experience in Graphic Design and
-                        Pre-Press
-                        using Adobe Photoshop, Illustrator, InDesign and more.</p>
+                        media and your digital online presence. Over 25 years of experience in Graphic Design and
+                        Pre-Press for the printing industry using Adobe Photoshop, Illustrator, InDesign and more.</p>
                 </div>
                 <div class="each-service">
                     <h4>UI/UX Design</h4>
                     <p>With many years of experience in graphic design for print, I took this knowledge and crossed over
                         into Web and Software Design. I design for mobile, tablet and desktop landing pages, full
                         websites, and software web apps. Experience using Adobe Illustrator, Adobe Photoshop and Adobe
-                        XD for protyping, and other wireframing tools, as well as
-                        good old fashioned white boards.</p>
+                        XD for protyping, and other wireframing tools, as well as good old fashioned white boards.</p>
                 </div>
                 <div class="each-service front-end">
                     <h4>Development</h4>
@@ -242,8 +241,11 @@
                     'http://borneid.com/portfolio_images/signs_games/LemaConstruction.jpg',
                     'http://borneid.com/portfolio_images/signs_games/postcardinn.jpg',
                     'http://borneid.com/portfolio_images/signs_games/wavegameWithSpinner.jpg',
-                    'http://borneid.com/portfolio_images/signs_games/splashmenu.jpg',
+                    'http://borneid.com/portfolio_images/signs_games/splashmenu.jpg'
+                ];
 
+                // Array with URLs for Art, Logos and MOre images only
+                let artimages = [
                     'http://borneid.com/portfolio_images/logos/caringangelsLogo.jpg',
                     'http://borneid.com/portfolio_images/logos/partyforgoodcauseLogo.jpg',
                     'http://borneid.com/portfolio_images/logos/mellomassageLogo.jpg',
@@ -252,7 +254,18 @@
                     'http://borneid.com/portfolio_images/logos/revelloLogo.jpg',
                     'http://borneid.com/portfolio_images/logos/freedomExpansionLogo.jpg',
                     'http://borneid.com/portfolio_images/hand_drawings/pen_and_ink_flower.jpg',
-                    'http://borneid.com/portfolio_images/hand_drawings/pen_and_ink_LisaBonet.jpg'
+                    'http://borneid.com/portfolio_images/hand_drawings/pen_and_ink_LisaBonet.jpg',
+
+                    'http://borneid.com/portfolio_images/miscArtwork/IrieMonRastaHead.jpg',
+                    'http://borneid.com/portfolio_images/albumCovers/BreakthroughCover-final-1600px_72ppi.jpg',
+                    'http://borneid.com/portfolio_images/logos/LagoonWaterSports-GreenYellow.jpg',
+                    'http://borneid.com/portfolio_images/miscArtwork/CUMBER-colored-glass-orange.jpg',
+
+                    'http://borneid.com/portfolio_images/socialMedia/BELIEVE.jpg',
+                    'http://borneid.com/portfolio_images/socialMedia/DESTINY.jpg',
+                    'http://borneid.com/portfolio_images/socialMedia/Mission2020.jpg',
+                    'http://borneid.com/portfolio_images/socialMedia/VICTORY.jpg'
+                    
                 ];
 
                 // Component for gallery image
@@ -303,8 +316,7 @@
 
                                 <section className="webportfolio" id="webportfolio-link">
                                     <div className="section-header" >
-                                        <h2>Web Portfolio</h2>
-                                        <div className="spacer"></div>
+                                        <h2>Web Design</h2>
                                     </div>
                                     <div className='row'>
                                         {
@@ -326,12 +338,33 @@
 
                                 <section className="printportfolio" id="printportfolio-link">
                                     <div className="section-header" >
-                                        <h2>Print Portfolio</h2>
-                                        <div className="spacer"></div>
+                                        <h2>Graphic Design for Print</h2>
                                     </div>
                                     <div className='row'>
                                         {
                                             printimages.map((url, index) => {
+                                                return (
+                                                    <div className='col-sm-6 col-md-3 col-xl-2 printimageshere' key={index}>
+                                                        <div className='gallery-card'>
+                                                            <GalleryImage className='gallery-thumbnail' src={url} alt={'Image number ' + (index + 1)} />
+
+                                                            <div className="card-icon-open" value={url} onClick={(e) => this.openModal(url, e)}>
+                                                                <div className="box1"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>)
+                                            })
+                                        }
+                                    </div>
+                                </section>
+
+                                <section className="printportfolio" id="printportfolio-link">
+                                    <div className="section-header" >
+                                        <h2>Logos, Hand drawings, Social Media and More</h2>
+                                    </div>
+                                    <div className='row'>
+                                        {
+                                            artimages.map((url, index) => {
                                                 return (
                                                     <div className='col-sm-6 col-md-3 col-xl-2 printimageshere' key={index}>
                                                         <div className='gallery-card'>
@@ -416,15 +449,6 @@
                         </a>
                     </div>
                 </div>
-
-                <!-- <div class="each-icon">
-                    <div class="center-icon">
-                        <a class="icon-anchor" href="https://github.com/kmbj6266" target="_blank">
-                            <i class="fab fa-github-square"></i>
-                            <p>Github</p>
-                        </a>
-                    </div>
-                </div> -->
             </div>
         </section>
 
