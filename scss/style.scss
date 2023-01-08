@@ -390,13 +390,11 @@ section{
 	}
 	h2 {
 		text-align: center;
-		padding-bottom: 1.0rem;
 		font-weight: 600;
     	font-size: 2.0rem;
 
 		@include responsivemin($iPad_iPadMini-Port, $height){
     		font-size: 2.4rem;
-    		padding-bottom: 1.5rem;
     	}
 	}
 }
@@ -650,7 +648,6 @@ section.graphic-d {
 	.fadeout {
 		display:block;
 		position: relative;
-	    background:pink;
 	    width: 90%;
 	    height: 46.5rem;
 	    top: -46.5rem;
@@ -679,30 +676,57 @@ section.graphic-d {
 	    left: 0;
 	}
 }
-.webportfolio, .printportfolio {
-	padding: 3.0rem 0;
 
-	@include responsivemin($iPad_iPadMini-Port, $height){
-		padding: 6.0rem 0;
-	}
-	@include responsivemin($iPad_iPadMini-Land-Desktop, $height){
-		padding: 10.0rem 0;
-	}
-}
 .webportfolio{
 	background:#222;
+	padding: 2.0rem 0 0;
+
+	@include responsivemin($iPad_iPadMini-Port, $height){
+		padding: 3.0rem 0 0;
+	}
+
+	@include responsivemin($Nexus7_land_960w, $height){
+		padding: 4.0rem 0 0;
+	}
 
 	.row {
 		padding: 0 2.0rem;
 	}
 }
+
 .printportfolio {
-	background:#333;
+	background:#222;
+	padding: 0;
+
+	@include responsivemin($iPad_iPadMini-Port, $height){
+		padding: 1.0rem 0;
+	}
+
+	@include responsivemin($Nexus7_land_960w, $height){
+		padding: 2.0rem 0 0;
+	}
 
 	.row {
 		padding: 0 2.0rem;
 	}
 }
+
+.videoportfolio {
+	padding: 0;
+
+	@include responsivemin($iPad_iPadMini-Port, $height){
+		padding: 0rem 0 1rem;
+	}
+
+	@include responsivemin($Nexus7_land_960w, $height){
+		padding: 2rem 0;
+	}
+
+	.row {
+		padding: 0 2.0rem;
+	}
+}
+
 .contact {
 	border-top: 1px solid gray;
 	display:table;

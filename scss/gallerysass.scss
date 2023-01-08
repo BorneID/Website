@@ -10,16 +10,17 @@ $Nexus7-Port: 37.500   em; //600px
 $GalaxyNmore-Land: 40.000em;  //640px
 $iPad_iPadMini-Port: 48.000em; //768px
 $iPhoneXland_or_KindlePort: 50.000em; //800px or 812px iPhoneX
+$Nexus7_land_960w: 60.00em; //960px wide
 $iPad_iPadMini-Land-Desktop: 64.000em; //1024px
 $laptopTouch_1280: 80.000em; //1280px
 $Wide-Desktop: 90em; //1440px
+$ExtraLarge-Desktop: 100em; //1600px
 // stop import here
 
 $black: #111;
 $radius: 4px;
 $transition: all .25s ease-in-out;
 $transition2: all .60s ease-in-out;
-
 
 html,
 body {
@@ -51,6 +52,7 @@ body {
     padding-left: 0;
     padding-right: 0;
 }
+
 .gallery-card {
     position: relative;
     overflow: hidden;
@@ -61,6 +63,60 @@ body {
     max-width: 100%;
     height: auto;
     border-radius: $radius;
+    text-align: center;
+}
+
+.row.videos {
+    .gallery-card {
+        height: 199.86px;
+
+        @include responsivemin($iPhone-6-8-Port, $height){
+            height: 239.11px;
+        }
+
+        @include responsivemin($iPhone-6-8-PlusPort, $height){
+            height: 274.80px;
+        }
+
+        @include responsivemin($iPad_iPadMini-Port, $height){
+            height: 249px;
+        }
+
+        @include responsivemin($Nexus7_land_960w, $height){
+            height: 250px;
+        }
+
+        @include responsivemin($iPad_iPadMini-Land-Desktop, $height){
+            height: 160px;
+        }
+
+        @include responsivemin($laptopTouch_1280, $height){
+            height: 250px;
+        }
+
+        @include responsivemin($Wide-Desktop, $height){
+            height: 233px;
+        }
+
+        @include responsivemin($ExtraLarge-Desktop, $height){
+            height: 319.23px;
+        }
+    }
+}
+
+.video-gallery-thumbnail {
+    max-width: 100%;
+    height: auto;
+    border-radius: $radius;
+    text-align: center;
+    background-color: #000000;
+    height: 100%;
+
+    iframe {
+        height: 100%;
+        width: 100%;
+        border: none;
+    }
 }
 
 .card-icon-open {
@@ -163,27 +219,4 @@ body {
         color: #fff;
         background: rgba(0, 0, 0, 0.5);
     }
-}
-
-.section-header {
-	padding: 0px 20px 20px;
-
-	@include responsivemin($iPad_iPadMini-Port, $height){
-		padding: 0px 20px 30px;
-	}
-	@include responsivemin($iPad_iPadMini-Land-Desktop, $height){
-		padding: 0px 20px 40px;
-	}
-	h2 {
-		text-align: center;
-		padding-bottom:10px;
-		font-weight: 600;
-    	font-size: 20px;
-
-		@include responsivemin($iPad_iPadMini-Port, $height){
-    		font-size: 24px;
-    		padding-bottom:15px;
-    	}
-	}
-	
 }
