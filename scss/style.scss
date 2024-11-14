@@ -227,24 +227,32 @@ p, h1, h2, h3, h4, h5 {
 	@include responsivemin($iPhone-6-8-Port, $height){
 		padding: 4rem;
 	}
+
+	h1 {
+		color: #FFFFFF;
+		text-align: center;
+		font-size: 2.0rem;
+		font-weight: 600;
+		padding: 1rem 0;
+		font-size: 2.0rem;
+
+		@include responsivemin($iPad_iPadMini-Port, $height){
+			font-size: 2.4rem;
+		}
+	}
 }
 
 .borneID {
-	min-height: 7rem;
+	min-height: 6rem;
 	margin: 0 auto;
 	background-image: url("..//images/borneID-website-logo-WHITE-NEW-redDot.png");
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
+	padding: 0 0 5rem;
 
 	@include responsivemin($iPhone-4-Land, $height){
-		min-height: 10rem;
-	}
-	@include responsivemin($Nexus7-Port, $height){
-		min-height: 11rem;
-	}
-	@include responsivemin($iPad_iPadMini-Land-Desktop, $height){
-		min-height: 13rem;
+		min-height: 7rem;
 	}
 }
 
@@ -252,8 +260,8 @@ p, h1, h2, h3, h4, h5 {
 	vertical-align: middle;
 	text-align: center;
 	color: #fff;
-	line-height: 1;
-	font-size: 1.6rem;
+	line-height: 1.2;
+	font-size: 1.8rem;
 	padding-top: 1.0rem;
 	font-weight: 100;
 	font-family: 'Myriad Pro', Arial, Helvetica, sans-serif;
@@ -446,10 +454,13 @@ section{
 			font-size: 2.8rem;
 		}
 	}
+	.name {
+		padding-bottom: 0.5rem;
+	}
 	p {
 		display:block;
 		vertical-align: top;
-		line-height: 1.5;
+		line-height: 1.2;
 
 		@include responsivemin($iPad_iPadMini-Port, $height){
 			font-size: 2.0rem;
@@ -803,24 +814,8 @@ footer {
 	color: #FFF;
 
 	img {
-		width: 65%;
+		width: 20rem;
 		margin: 0 auto 0rem;
-		
-		@include responsivemin($iPhone-4-Land, $height){
-			width: 40%;
-		}
-		@include responsivemin($iPad_iPadMini-Land-Desktop, $height){
-			width: 30%;
-		}
-		@include responsivemin($laptopTouch_1280, $height){
-			width: 28%;
-		}
-		@include responsivemin($Wide-Desktop, $height){
-			width: 25%;
-		} 
-		@include responsivemin($ExtraLarge-Desktop, $height){
-			width: 17%;
-		} 
     }
 
 	i {
@@ -834,10 +829,10 @@ footer {
 
 	p {
 		color: #fff;
-		font-size: 1.2rem !important;
+		font-size: 1.2rem;
 		
 		@include responsivemin($iPad_iPadMini-Port, $height){
-			font-size: 1.8rem !important;
+			font-size: 1.5rem;
 		}
 	}
 	.copyright {
